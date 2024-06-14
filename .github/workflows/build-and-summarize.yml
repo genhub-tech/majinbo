@@ -1,0 +1,72 @@
+name: Build and Summarize Logs
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        target: [x86_64-unknown-linux-gnu, aarch64-unknown-linux-gnu, aarch64-apple-darwin]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: ${{ matrix.target }}
+          override: true
+
+      - name: Install dependencies
+        if: matrix.target == 'aarch64-unknown-linux-gnu'
+        run: sudo apt-get update && sudo apt-get install -y gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+
+      - name: Install additional target
+        run: rustup target add ${{ matrix.target }}
+
+      - name: Build
+        env:
+          CC_aarch64_unknown_linux_gnu: aarch64-linux-gnu-gcc
+          AR_aarch64_unknown_linux_gnu: aarch64-linux-gnu-ar
+        run: cargo build --release --target ${{ matrix.target }}
+
+      - name: Upload binaries
+        uses: actions/upload-artifact@v2
+        with:
+          name: majinbo-${{ matrix.target }}
+          path: target/${{ matrix.target }}/release/majinbo
+
+  summarize_logs:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get the latest failed run
+        id: get-failed-run
+        run: |
+          RUN_ID=$(gh run list --status failure --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
+
+      - name: Get logs of the failed run
+        run: gh run view ${{ env.RUN_ID }} --log > build-logs.txt
+
+      - name: Create prompt for Bito
+        run: echo "Summarize the following build logs:" > prompt.txt
+
+      - name: Summarize logs with Bito
+        run: bito -p prompt.txt -f build-logs.txt -c context.txt > build-summary.txt
+
+      - name: Upload summary
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-summary
+          path: build-summary.txt
