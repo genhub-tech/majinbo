@@ -1,0 +1,66 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        target: [linux-amd64, darwin-aarch64]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: ${{ matrix.target }}
+
+      - name: Build
+        run: |
+          if [ "${{ matrix.target }}" = "linux-amd64" ]; then
+            cargo build --release --target x86_64-unknown-linux-gnu
+          elif [ "${{ matrix.target }}" = "darwin-aarch64" ]; then
+            cargo build --release --target aarch64-apple-darwin
+          fi
+      
+      - name: Upload binaries
+        uses: actions/upload-artifact@v2
+        with:
+          name: majinbo-${{ matrix.target }}
+          path: |
+            target/x86_64-unknown-linux-gnu/release/serverwitch
+            target/aarch64-apple-darwin/release/serverwitch
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Linux binary
+        uses: actions/download-artifact@v2
+        with:
+          name: majinbo-linux-amd64
+          path: target/release/
+      
+      - name: Download macOS binary
+        uses: actions/download-artifact@v2
+        with:
+          name: majinbo-darwin-aarch64
+          path: target/release/
+      
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: |
+            target/release/serverwitch-linux-amd64
+            target/release/serverwitch-darwin-aarch64
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref }}
+          release_name: ${{ github.ref }}
