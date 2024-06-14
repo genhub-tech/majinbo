@@ -1,0 +1,67 @@
+name: Build and Release to Public
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        target: [x86_64-unknown-linux-gnu, aarch64-unknown-linux-gnu, aarch64-apple-darwin]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: ${{ matrix.target }}
+
+      - name: Build
+        run: cargo build --release --target ${{ matrix.target }}
+      
+      - name: Upload binaries
+        uses: actions/upload-artifact@v2
+        with:
+          name: majinbo-${{ matrix.target }}
+          path: target/${{ matrix.target }}/release/majinbo
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Linux amd64 binary
+        uses: actions/download-artifact@v2
+        with:
+          name: majinbo-x86_64-unknown-linux-gnu
+          path: target/release/
+      
+      - name: Download Linux aarch64 binary
+        uses: actions/download-artifact@v2
+        with:
+          name: majinbo-aarch64-unknown-linux-gnu
+          path: target/release/
+      
+      - name: Download macOS aarch64 binary
+        uses: actions/download-artifact@v2
+        with:
+          name: majinbo-aarch64-apple-darwin
+          path: target/release/
+      
+      - name: Create release in public repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v${{ github.event.release.tag_name }} \
+            target/release/majinbo-x86_64-unknown-linux-gnu \
+            target/release/majinbo-aarch64-unknown-linux-gnu \
+            target/release/majinbo-aarch64-apple-darwin \
+            --repo genhub-tech/majinbo-clients \
+            --title "Release ${{ github.event.release.tag_name }}" \
+            --notes "Automated release of Majinbo binaries"
