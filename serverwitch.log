@@ -1,0 +1,110 @@
+[00:00:01.011] (1f18a8c00) INFO   Session id: e4a85996025ef1f3a5ced43f3c35d45dd3f5c6e0bbf41c19dd08a7b0b5a3fcb2
+[00:00:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:00:01.247] (1f18a8c00) INFO   Received message: keepalive
+[00:00:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:00:21.252] (1f18a8c00) INFO   Received message: keepalive
+[00:00:36.530] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "hostname"}, "request_id": "162159fd-c46c-43b7-a06d-a8263d5362c7"}
+[00:00:36.542] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"macbookonce\n","stderr":""},"error":false,"request_id":"162159fd-c46c-43b7-a06d-a8263d5362c7"}
+[00:00:39.488] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "uname -a"}, "request_id": "d74bd524-17ca-485a-a94d-5648e97ff5e0"}
+[00:00:39.502] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"Darwin macbookonce 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64\n","stderr":""},"error":false,"request_id":"d74bd524-17ca-485a-a94d-5648e97ff5e0"}
+[00:00:41.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:00:41.249] (1f18a8c00) INFO   Received message: keepalive
+[00:01:01.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:01:01.252] (1f18a8c00) INFO   Received message: keepalive
+[00:01:21.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:01:21.250] (1f18a8c00) INFO   Received message: keepalive
+[00:01:41.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:01:41.252] (1f18a8c00) INFO   Received message: keepalive
+[00:02:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:02:01.251] (1f18a8c00) INFO   Received message: keepalive
+[00:02:16.895] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "hostname"}, "request_id": "2446a439-0452-43c6-b676-6dc61ca6e504"}
+[00:02:16.903] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"macbookonce\n","stderr":""},"error":false,"request_id":"2446a439-0452-43c6-b676-6dc61ca6e504"}
+[00:02:19.656] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "uname -a"}, "request_id": "df406f5e-d7e4-4c66-aaa4-433bcc7a4c65"}
+[00:02:19.665] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"Darwin macbookonce 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64\n","stderr":""},"error":false,"request_id":"df406f5e-d7e4-4c66-aaa4-433bcc7a4c65"}
+[00:02:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:02:21.250] (1f18a8c00) INFO   Received message: keepalive
+[00:02:22.796] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "df -h"}, "request_id": "880f857a-e1e1-49e8-b911-296f91654d46"}
+[00:02:22.811] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s4s1   460Gi   9.6Gi    88Gi    10%    404k  921M    0%   /\ndevfs            220Ki   220Ki     0Bi   100%     762     0  100%   /dev\n/dev/disk3s7     460Gi   3.0Gi    88Gi     4%       3  921M    0%   /System/Volumes/VM\n/dev/disk3s5     460Gi   5.7Gi    88Gi     7%    1.1k  921M    0%   /System/Volumes/Preboot\n/dev/disk3s3     460Gi    22Mi    88Gi     1%      49  921M    0%   /System/Volumes/Update\n/dev/disk1s2     500Mi   6.0Mi   482Mi     2%       1  4.9M    0%   /System/Volumes/xarts\n/dev/disk1s1     500Mi   6.2Mi   482Mi     2%      41  4.9M    0%   /System/Volumes/iSCPreboot\n/dev/disk1s3     500Mi   1.2Mi   482Mi     1%      53  4.9M    0%   /System/Volumes/Hardware\n/dev/disk3s1     460Gi   255Gi    88Gi    75%    1.8M  921M    0%   /System/Volumes/Data\n/dev/disk3s2     460Gi    98Gi    88Gi    53%    1.1M  921M    0%   /Volumes/macOS-extravol\nmap auto_home      0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home\n/dev/disk5s1     477Gi    61Gi    65Gi    49%     112  678M    0%   /Volumes/SSD_512G\n/dev/disk5s2     477Gi   350Gi    65Gi    85%     59k  678M    0%   /Volumes/SSD_DRAWTH\n","stderr":""},"error":false,"request_id":"880f857a-e1e1-49e8-b911-296f91654d46"}
+[00:02:41.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:02:41.249] (1f18a8c00) INFO   Received message: keepalive
+[00:03:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:03:01.250] (1f18a8c00) INFO   Received message: keepalive
+[00:03:21.030] (1f18a8c00) INFO   Sending message: keepalive
+[00:03:21.259] (1f18a8c00) INFO   Received message: keepalive
+[00:03:41.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:03:41.251] (1f18a8c00) INFO   Received message: keepalive
+[00:04:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:04:01.252] (1f18a8c00) INFO   Received message: keepalive
+[00:04:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:04:21.250] (1f18a8c00) INFO   Received message: keepalive
+[00:04:31.485] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "hostname"}, "request_id": "43c8f068-d994-4b68-9275-6c93dec467f9"}
+[00:04:31.499] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"macbookonce\n","stderr":""},"error":false,"request_id":"43c8f068-d994-4b68-9275-6c93dec467f9"}
+[00:04:34.333] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "uname -a"}, "request_id": "e888805e-f620-43b6-a880-5ee927e56ed8"}
+[00:04:34.346] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"Darwin macbookonce 23.5.0 Darwin Kernel Version 23.5.0: Wed May  1 20:16:51 PDT 2024; root:xnu-10063.121.3~5/RELEASE_ARM64_T8103 arm64\n","stderr":""},"error":false,"request_id":"e888805e-f620-43b6-a880-5ee927e56ed8"}
+[00:04:39.671] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "curl ipinfo.io"}, "request_id": "893338da-dd46-4875-87a5-75829ff7e6be"}
+[00:04:39.929] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"{\n  \"ip\": \"186.48.162.124\",\n  \"hostname\": \"r186-48-162-124.dialup.adsl.anteldata.net.uy\",\n  \"city\": \"Montevideo\",\n  \"region\": \"Montevideo Department\",\n  \"country\": \"UY\",\n  \"loc\": \"-34.9033,-56.1882\",\n  \"org\": \"AS6057 Administracion Nacional de Telecomunicaciones\",\n  \"postal\": \"11100\",\n  \"timezone\": \"America/Montevideo\",\n  \"readme\": \"https://ipinfo.io/missingauth\"\n}","stderr":"  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   367  100   367    0     0   1657      0 --:--:-- --:--:-- --:--:--  1653\r100   367  100   367    0     0   1656      0 --:--:-- --:--:-- --:--:--  1653\n"},"error":false,"request_id":"893338da-dd46-4875-87a5-75829ff7e6be"}
+[00:04:41.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:04:41.249] (1f18a8c00) INFO   Received message: keepalive
+[00:05:01.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:05:01.252] (1f18a8c00) INFO   Received message: keepalive
+[00:05:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:05:21.251] (1f18a8c00) INFO   Received message: keepalive
+[00:05:41.025] (1f18a8c00) INFO   Sending message: keepalive
+[00:05:41.253] (1f18a8c00) INFO   Received message: keepalive
+[00:06:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:06:01.251] (1f18a8c00) INFO   Received message: keepalive
+[00:06:15.256] (1f18a8c00) INFO   Received message: {"data": {"action": "read", "path": "/Volumes/macOS-extravol/development/serverwitch-client/README.md"}, "request_id": "709f7ee4-c940-4052-8553-ae15fe97d9da"}
+[00:06:15.267] (1f18a8c00) INFO   Sending message: {"data":"Error executing command: No such file or directory (os error 2)","error":true,"request_id":"709f7ee4-c940-4052-8553-ae15fe97d9da"}
+[00:06:21.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:06:21.249] (1f18a8c00) INFO   Received message: keepalive
+[00:06:41.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:06:41.249] (1f18a8c00) INFO   Received message: keepalive
+[00:06:41.965] (1f18a8c00) INFO   Received message: {"data": {"action": "read", "path": "/Volumes/macOS-extravol/development/majinbo/serverwitch-client/README.md"}, "request_id": "af4c436c-4e2c-4d34-9972-a278fae741c6"}
+[00:06:41.971] (1f18a8c00) INFO   Sending message: {"data":"Error executing command: No such file or directory (os error 2)","error":true,"request_id":"af4c436c-4e2c-4d34-9972-a278fae741c6"}
+[00:07:01.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:07:01.251] (1f18a8c00) INFO   Received message: keepalive
+[00:07:10.152] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "ls -l /Volumes/macOS-extravol/majinbo/serverwitch-client"}, "request_id": "4e88ca87-2072-46dd-a51c-bf644d4feb53"}
+[00:07:10.169] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"total 30120\n-rw-r--r--  1 eleven  wheel     37953 Jun 13 21:30 Cargo.lock\n-rw-r--r--  1 eleven  wheel      1087 Jun 13 21:30 Cargo.toml\n-rw-r--r--  1 eleven  wheel     35149 Jun 13 21:30 LICENSE\n-rw-r--r--  1 eleven  wheel      4098 Jun 13 21:30 README.md\n-rw-r--r--  1 eleven  wheel    130769 Jun 13 21:30 logo.png\n-rw-r--r--  1 eleven  wheel     19368 Jun 13 21:30 protocol.png\n-rw-r--r--  1 eleven  wheel       251 Jun 13 21:30 run.sh\n-rwxr-xr-x  1 eleven  wheel  15161600 Jun 14 00:09 serverwitch\n-rw-r--r--  1 eleven  wheel      8973 Jun 14 02:36 serverwitch.log\ndrwxr-xr-x  8 eleven  wheel       256 Jun 13 21:30 src\ndrwxr-xr-x@ 6 eleven  wheel       192 Jun 14 00:09 target\n","stderr":""},"error":false,"request_id":"4e88ca87-2072-46dd-a51c-bf644d4feb53"}
+[00:07:21.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:07:21.249] (1f18a8c00) INFO   Received message: keepalive
+[00:07:40.348] (1f18a8c00) INFO   Received message: {"data": {"action": "read", "path": "/Volumes/macOS-extravol/majinbo/serverwitch-client/README.md"}, "request_id": "3ff3094c-776b-49d8-9f19-0243c4de309d"}
+[00:07:40.356] (1f18a8c00) INFO   Sending message: {"data":{"content":"# Server Witch\n\n<p align=\"center\">\n  <img width=\"40%\" src=\"logo.png\">\n</p>\n\nServer Witch enables a Large Language Model, such as ChatGPT, to remotely administer and configure your servers.\n\nThis project is compatible with the Server Witch custom GPT, available on the [GPT Store](https://chat.openai.com/g/g-htdz15vGv-server-witch).\n\n## Demo\n\n![Server Witch demo](https://github.com/g33kex/ServerWitch/releases/download/v0.1.1/serverwitch.gif)\n\n## How to Use\n\nPlease read and understand the [Disclaimer](#disclaimer) section before running this on your system.\n\n```\ncurl -s https://raw.githubusercontent.com/g33kex/ServerWitch/main/run.sh | sh\n```\n\n1. This command downloads and runs the executable, which will print a session ID. You can also download the executable from the [releases page](https://github.com/g33kex/ServerWitch/releases/) or built it yourself.\n2. Provide this session ID to the Server Witch custom GPT.\n3. Ask the GPT to configure your server. Here are some suggestions:\n    * Install Apache and set up a test webpage on port 8080.\n    * List all installed packages on the server.\n    * Determine who is currently connected to the machine.\n    * Install Docker and run the Ubuntu image.\n    * Audit the SSHD configuration.\n    * Reboot the server.\n    * Install, deploy Kubernetes, and ensure its proper functionality.\n\n**Before executing each action, the `serverwitch` client will request your confirmation.**\n\n## Disclaimer\n\nThis program is essentially a backdoor that enables a remote LLM to control your machine. The permissions granted to the LLM are equivalent to those with which you run the `serverwitch` client. For example, running `sudo serverwitch` grants the LLM full root access to your server.\n\nAllowing an LLM to execute commands on your server can be hazardous, potentially leading to configuration errors, security vulnerabilities, and catastrophic consequences including the potential for AI to take over the world or eat your laundry. We are not liable for any damage resulting from the usage of this software. Exercise extreme caution. Do not use this on production servers.\n\nFurthermore, running this software allows the Server Witch API server to control your machine. The communication between the client and the API is secured with HTTPS, but anyone with access to your session ID can run arbitrary commands on your machine (with your confirmation before each command). If this concerns you, consider deploying your own API server, and restrict its access.\n\n## Privacy Policy\n\nThis software is part of a research project on autonomous LLM agents. By using the public API endpoint, you consent to the collection and use for research purposes of your personal data, including commands executed by the LLM, their outputs, and the files read and written, along with their contents. If you prefer to keep your information private, please consider deploying your own Server Witch API endpoint and Server Witch custom GPT. \n\n## Technical Details\n\nThis repository houses the client for Server Witch, an autonomous server configuration assistant. This client enables a Large Language Model, such as ChatGPT, to execute commands on your machine and read/write files with user confirmation.\n\nBy default, this client connects to a demo public API server linked to the Server Witch custom GPT. It upgrades its HTTPS connection to a WebSocket to receive commands and send responses.\n\nThe witch protocol is illustrated as follows:  \n\n<p align=\"center\">\n  <img width=\"80%\" src=\"protocol.png\">\n</p>\n\n## Building\n\nTo build, first ensure `cargo` and the `rust` toolchain are installed.\nThen execute the following commands:\n```\ngit clone https://github.com/g33kex/serverwitch\ncd serverwitch\ncargo build\n```\n\n## Self-Hosting\n\nSee [here](https://github.com/g33kex/serverwitch-api) for instructions on how to make your own Server Witch API endpoint and custom GPT.\n\n## Contributing\n\nContributions are highly appreciated. Please feel free to submit pull requests and bug reports. If you discover a security vulnerability in this software, contact me at `g33kex[at]pm[dot]me`.\n\n"},"error":false,"request_id":"3ff3094c-776b-49d8-9f19-0243c4de309d"}
+[00:07:41.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:07:41.251] (1f18a8c00) INFO   Received message: keepalive
+[00:08:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:08:01.249] (1f18a8c00) INFO   Received message: keepalive
+[00:08:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:08:21.251] (1f18a8c00) INFO   Received message: keepalive
+[00:08:31.819] (1f18a8c00) INFO   Received message: {"data": {"action": "read", "path": "/Volumes/macOS-extravol/majinbo/serverwitch-client/src/main.rs"}, "request_id": "f046b3be-acb5-4991-a718-8baa3ca3415a"}
+[00:08:31.828] (1f18a8c00) INFO   Sending message: {"data":{"content":"use clap::Parser;\nuse futures_channel::mpsc;\nuse futures_util::FutureExt;\nuse futures_util::{pin_mut, select};\nuse log::info;\nuse log::LevelFilter;\nuse std::path::PathBuf;\n\nuse serverwitch::action::ActionMessage;\nuse serverwitch::session::Session;\nuse serverwitch::tui;\n\nconst SERVER_URL: &str = \"wss:///serverwitch.dev\";\nconst LOG_FILE: &str = \"serverwitch.log\";\nconst CHANNEL_SIZE: usize = 100;\n\n/// The Cli arguments\n#[derive(Parser, Debug)]\n#[clap(author = \"g33kex, g33kex@pm.me\", version = env!(\"CARGO_PKG_VERSION\"), about = \"Let an AI remotely control your computer\", long_about = None)]\nstruct Cli {\n    /// The URL of the ServerWitch relay server\n    #[arg(short, long, default_value_t = url::Url::parse(SERVER_URL).expect(\"Failed to parse default server URL\"))]\n    url: url::Url,\n    /// Path to write logs\n    #[arg(short, long, default_value = LOG_FILE)]\n    output_file: PathBuf,\n    /// DANGEROUS: Execute all commands without confirmation\n    #[arg(long = \"yes\")]\n    noconfirm: bool,\n}\n\n#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let args = Cli::parse();\n\n    let _ = simple_logging::log_to_file(args.output_file, LevelFilter::Info);\n\n    let url = args.url.join(\"/session\")?;\n    let session = Session::new(url.as_str()).await?;\n    info!(\"Session id: {}\", session.session_id);\n\n    let (mut tx, rx) = mpsc::channel(CHANNEL_SIZE);\n\n    tx.try_send(ActionMessage::NewSession(session.session_id.clone()))?;\n\n    let tui_task = tui::run(rx).fuse();\n    let session_task = session.process_messages(args.noconfirm, tx).fuse();\n\n    pin_mut!(tui_task, session_task);\n\n    select!(_ = tui_task => info!(\"Application closed\"), _ = session_task => info!(\"Session closed\"));\n\n    Ok(())\n}\n"},"error":false,"request_id":"f046b3be-acb5-4991-a718-8baa3ca3415a"}
+[00:08:41.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:08:41.249] (1f18a8c00) INFO   Received message: keepalive
+[00:09:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:09:01.254] (1f18a8c00) INFO   Received message: keepalive
+[00:09:21.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:09:21.251] (1f18a8c00) INFO   Received message: keepalive
+[00:09:41.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:09:41.252] (1f18a8c00) INFO   Received message: keepalive
+[00:10:01.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:10:01.251] (1f18a8c00) INFO   Received message: keepalive
+[00:10:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:10:21.253] (1f18a8c00) INFO   Received message: keepalive
+[00:10:41.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:10:41.251] (1f18a8c00) INFO   Received message: keepalive
+[00:11:01.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:11:01.251] (1f18a8c00) INFO   Received message: keepalive
+[00:11:21.023] (1f18a8c00) INFO   Sending message: keepalive
+[00:11:21.250] (1f18a8c00) INFO   Received message: keepalive
+[00:11:41.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:11:41.250] (1f18a8c00) INFO   Received message: keepalive
+[00:12:01.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:12:01.250] (1f18a8c00) INFO   Received message: keepalive
+[00:12:07.850] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "git init /Volumes/macOS-extravol/majinbo/serverwitch-client"}, "request_id": "d35780e7-8e25-413d-9afc-b2c9d27de28b"}
+[00:12:07.891] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"Inicializado repositorio Git vacío en /Volumes/macOS-extravol/majinbo/serverwitch-client/.git/\n","stderr":""},"error":false,"request_id":"d35780e7-8e25-413d-9afc-b2c9d27de28b"}
+[00:12:13.434] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "cd /Volumes/macOS-extravol/majinbo/serverwitch-client && git remote remove origin"}, "request_id": "95f8e02a-823a-472a-a147-701156508d87"}
+[00:12:13.470] (1f18a8c00) INFO   Sending message: {"data":{"return_code":2,"stdout":"","stderr":"error: No existe el remoto 'origin'\n"},"error":false,"request_id":"95f8e02a-823a-472a-a147-701156508d87"}
+[00:12:17.552] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "git remote add origin https://github.com/genhub-tech/majinbo.git"}, "request_id": "0ac67c1e-43ce-44df-82af-d775a6ee76dd"}
+[00:12:17.577] (1f18a8c00) INFO   Sending message: {"data":{"return_code":0,"stdout":"","stderr":""},"error":false,"request_id":"0ac67c1e-43ce-44df-82af-d775a6ee76dd"}
+[00:12:21.022] (1f18a8c00) INFO   Sending message: keepalive
+[00:12:21.248] (1f18a8c00) INFO   Received message: keepalive
+[00:12:21.953] (1f18a8c00) INFO   Received message: {"data": {"action": "command", "command": "cd /Volumes/macOS-extravol/majinbo/serverwitch-client && git add . && git commit -m \"Initial commit for Majinbo client\" && git push -u origin master"}, "request_id": "b550c3a8-fdae-49bf-bbc4-1416f285ae4b"}
