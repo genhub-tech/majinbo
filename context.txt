@@ -1,0 +1,110 @@
+# Contexto del Proyecto Majinbo
+
+## Repositorios
+
+- **Repositorio Privado:** [majinbo](https://github.com/genhub-tech/majinbo)
+  - Contiene el código fuente principal del proyecto.
+- **Repositorio Público:** [majinbo-clients](https://github.com/genhub-tech/majinbo-clients)
+  - Contiene el script `run.sh` y los builds para `darwin-aarch64` y `linux_x86_64` o `amd64`.
+
+## Entorno de Ejecución
+
+- **Sistema Operativo:** macOS Sonoma
+- **Herramientas Disponibles:**
+  - Git
+  - GitHub CLI (`gh`)
+  - Bito (basado en GPT-3.5-turbo)
+
+## Problemas Encontrados
+
+1. **Desincronización de Repositorios:**
+   - `gh` estaba apuntando a un repositorio diferente al configurado en `git remotes`.
+
+2. **Errores en los Workflows de CI/CD:**
+   - Los workflows fallaban consistentemente debido a problemas de configuración y dependencia.
+
+3. **Falta de Logs Detallados:**
+   - No se estaban capturando correctamente los logs de los builds fallidos.
+
+## Soluciones Propuestas y Acciones Tomadas
+
+1. **Configuración Correcta de Repositorios:**
+   - Asegurarse de que `gh` y `git` apunten al mismo repositorio.
+
+2. **Pipeline de CI/CD:**
+   - Creación de un pipeline que incluya:
+     - Build de los binarios.
+     - Captura de logs de builds fallidos.
+     - Resumen automático de logs usando Bito.
+
+3. **Uso de Bito:**
+   - Instrucciones para usar Bito:
+     - Resumir logs detallados de builds fallidos.
+     - Guardar los resúmenes en un archivo accesible.
+
+## Comandos Útiles
+
+### Configuración de Repositorios
+
+```sh
+# Verificar el repositorio remoto de git
+git remote -v
+
+# Verificar el repositorio actual de gh
+gh repo view --json name,url
+```
+
+### Ejecución de Bito
+
+```sh
+# Crear un archivo de prompt para Bito
+echo "Summarize the following build logs:" > prompt.txt
+
+# Usar Bito para resumir los logs
+bito -p prompt.txt -f build-logs.txt -c context.txt > build-summary.txt
+```
+
+### Ejecución del Pipeline
+
+```sh
+# Crear y empujar un nuevo tag para activar el workflow
+git tag v0.1.6
+git push origin v0.1.6
+```
+
+### Scripts Útiles
+
+#### Script para Capturar y Resumir Logs de Builds Fallidos
+
+```sh
+#!/bin/bash
+
+# Obtener la lista de builds fallidos
+FAILED_RUNS=$(gh run list --status failure --limit 5 --json databaseId,name,status,conclusion)
+
+# Verificar si hay builds fallidos
+if [ -z "$FAILED_RUNS"]; then
+  echo "No failed runs found."
+  exit 1
+fi
+
+# Extraer el ID del primer build fallido
+RUN_ID=$(echo $FAILED_RUNS | jq -r '.[0].databaseId')
+
+# Guardar los logs detallados en un archivo
+gh run view $RUN_ID --log > build-logs.txt
+
+# Crear un archivo de prompt para Bito
+echo "Summarize the following build logs:" > prompt.txt
+
+# Usar Bito para resumir los logs
+bito -p prompt.txt -f build-logs.txt -c context.txt > build-summary.txt
+
+echo "Summary saved to build-summary.txt"
+```
+
+## Próximos Pasos
+
+- Verificar los workflows y releases en GitHub Actions.
+- Asegurarse de que los binarios se publiquen correctamente en el repositorio público.
+- Utilizar Bito para resumir logs y facilitar el diagnóstico de problemas futuros.
